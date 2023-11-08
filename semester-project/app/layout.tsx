@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Condensed, Playfair_Display } from "next/font/google";
 import clsx from "clsx";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
 // import Footer from "@/components/footer";
 import "./globals.css";
 
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 // Get this info from some external source (e.g. CMS)
-const pages = {
+const pages: Record<string, `/${string}`> = {
   home: "/",
   showcase: "/showcase",
   blog: "/blog",
@@ -52,7 +52,7 @@ export default function RootLayout({
           playfairDisplay.variable
         )}
       >
-        <Navbar />
+        <Navbar pages={pages}></Navbar>
         {children}
         {/* <Footer />  */}
       </body>
