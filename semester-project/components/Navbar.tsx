@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import { FC } from "react";
 import Logo from "./Logo";
 
@@ -25,7 +25,7 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
             <li key={name}>
               <Link href={path}>
                 <span
-                  className={clsx(baseClass, {
+                  className={cn(baseClass, {
                     "bg-brand-purple-700 text-brand-purple-100 pointer-events-none":
                       path === pathName,
                   })}
